@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "psithurism",
+  "scopeName": "source.psithurism",
+  
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#pipes" },
+    { "include": "#numbers" },
+    { "include": "#identifiers" }
+  ],
+  
+  "repository": {
+    "comments": {
+      "name": "comment.line.number-sign.psithurism",
+      "begin": "#",
+      "end": "\n"
+    },
+
+    "strings": {
+      "patterns": [
+        { "include": "#double-string" },
+        { "include": "#single-string" },
+        { "include": "#backtick-string" }
+      ]
+    },
+
+    "double-string": {
+      "name": "string.quoted.double.psithurism",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [{
+        "name": "constant.character.escape.psithurism",
+        "match": "\\\\."
+      }]
+    },
+
+    "single-string": {
+      "name": "string.quoted.single.psithurism",
+      "begin": "'",
+      "end": "'",
+      "patterns": [{
+        "name": "constant.character.escape.psithurism",
+        "match": "\\\\."
+      }]
+    },
+
+    "backtick-string": {
+      "name": "string.other.psithurism",
+      "begin": "`",
+      "end": "`",
+      "patterns": [{ "include": "source.js" }]
+    },
+
+    "pipes": {
+      "patterns": [{
+        "name": "keyword.control.psithurism.psithurism",
+        "match": "\\||≺|≻"
+      }]
+    },
+
+    "conditionals": {
+      "patterns": [{
+        "name" : "keyword.control.less.psithurism",
+        "match": "\\?:"
+      }]
+    },
+
+    "constants": {
+      "patterns": [{
+        "name": "constant.language.psithurism",
+        "match": "true|false|null"
+      }, {
+        "patterns": [{
+          "name": "variable.language.psithurism",
+          "match": "\\$|i"
+        }]
+      }]
+    },
+
+    "numbers": {
+      "patterns": [{
+        "name": "constant.numeric.psithurism",
+        "match": "(\\d*\\.)?\\d+(e-?\\d+)?"
+      }]
+    },
+
+    "identifiers": {
+      "patterns": [{
+        "name": "entity.name.function.psithurism",
+        "match": "[a-zA-Z]+"
+      }, {
+        "name": "keyword.operator.psithurism",
+        "match": "\\S"
+      }]
+    }
+  }
+}
