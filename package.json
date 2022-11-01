@@ -2,7 +2,7 @@
   "name": "psithurism",
   "displayName": "psithurism",
   "description": "A language with | pipes",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.71.0"
   },
@@ -10,17 +10,26 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "psithurism",
-      "aliases": ["psithurism", "psithurism"],
-      "extensions": [".psi"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "psithurism",
-      "scopeName": "source.psithurism",
-      "path": "./syntaxes/psithurism.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "psithurism",
+        "aliases": [
+          "psithurism",
+          "psithurism"
+        ],
+        "extensions": [
+          ".psi"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "psithurism",
+        "scopeName": "source.psithurism",
+        "path": "./syntaxes/psithurism.tmLanguage.json"
+      }
+    ]
   },
   "repository": {
     "type": "git",
