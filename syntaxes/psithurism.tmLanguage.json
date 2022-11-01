@@ -56,7 +56,7 @@
     "pipes": {
       "patterns": [{
         "name": "keyword.control.psithurism.psithurism",
-        "match": "\\||≺|≻"
+        "match": "\\||≺|≻|⇥|⟼"
       }]
     },
 
