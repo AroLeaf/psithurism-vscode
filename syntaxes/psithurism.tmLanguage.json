@@ -20,20 +20,9 @@
 
     "strings": {
       "patterns": [
-        { "include": "#double-string" },
         { "include": "#single-string" },
         { "include": "#backtick-string" }
       ]
-    },
-
-    "double-string": {
-      "name": "string.quoted.double.psithurism",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [{
-        "name": "constant.character.escape.psithurism",
-        "match": "\\\\."
-      }]
     },
 
     "single-string": {
