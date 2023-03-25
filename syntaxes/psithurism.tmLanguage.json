@@ -20,8 +20,8 @@
         "end": "\n"
       }, {
         "name": "comment.block.psithurism",
-        "begin": "#[",
-        "end": "]#"
+        "begin": "#\\[",
+        "end": "\\]#"
       }]
     },
 
