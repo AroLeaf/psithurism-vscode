@@ -5,7 +5,8 @@
   
   "patterns": [
     { "include": "#comments" },
-    { "include": "#strings" },
+    { "include": "#string" },
+    { "include": "#character" },
     { "include": "#pipes" },
     { "include": "#numbers" },
     { "include": "#identifiers" }
@@ -13,19 +14,18 @@
   
   "repository": {
     "comments": {
-      "name": "comment.line.number-sign.psithurism",
-      "begin": "#",
-      "end": "\n"
+      "patterns": [{
+        "name": "comment.line.number-sign.psithurism",
+        "begin": "#",
+        "end": "\n"
+      }, {
+        "name": "comment.block.psithurism",
+        "begin": "#[",
+        "end": "]#"
+      }]
     },
 
-    "strings": {
-      "patterns": [
-        { "include": "#single-string" },
-        { "include": "#backtick-string" }
-      ]
-    },
-
-    "single-string": {
+    "string": {
       "name": "string.quoted.single.psithurism",
       "begin": "'",
       "end": "'",
@@ -35,17 +35,17 @@
       }]
     },
 
-    "backtick-string": {
-      "name": "string.other.psithurism",
-      "begin": "`",
-      "end": "`",
-      "patterns": [{ "include": "source.js" }]
+    "character": {
+      "patterns": [{
+        "name": "string.other.psithurism",
+        "match": "\"."
+      }]
     },
 
     "pipes": {
       "patterns": [{
         "name": "keyword.control.psithurism.psithurism",
-        "match": "\\||≺|≻|⇥|⟼"
+        "match": "\\||≺|≻"
       }]
     },
 
@@ -59,7 +59,7 @@
     "constants": {
       "patterns": [{
         "name": "constant.language.psithurism",
-        "match": "true|false|null"
+        "match": "∅|ε"
       }, {
         "patterns": [{
           "name": "variable.language.psithurism",
@@ -71,7 +71,7 @@
     "numbers": {
       "patterns": [{
         "name": "constant.numeric.psithurism",
-        "match": "(\\d*\\.)?\\d+(e-?\\d+)?"
+        "match": "(\\d*\\.)?\\d+"
       }]
     },
 
